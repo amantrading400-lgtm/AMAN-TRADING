@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,6 +58,29 @@ button{
     --text:#17352a;
 }
 
+
+/* =========================================================
+   OPENING ANIMATION
+========================================================= */
+
+body{
+    animation:pageOpen 1.2s ease both;
+}
+
+@keyframes pageOpen{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+
+/* =========================================================
+   CURSOR GLOW
+========================================================= */
+
 .cursor-glow{
     position:fixed;
     width:250px;
@@ -70,6 +92,11 @@ button{
     z-index:1;
 }
 
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
 .navbar{
     position:fixed;
     top:0;
@@ -77,7 +104,7 @@ button{
     width:100%;
     z-index:1000;
     padding:20px 6%;
-    transition:.4s ease;
+    transition:.7s ease;
 }
 
 .navbar.scrolled{
@@ -113,6 +140,11 @@ button{
     color:var(--gold2);
     font-family:'Playfair Display',serif;
     font-size:20px;
+    transition:.8s ease;
+}
+
+.logo:hover .logo-mark{
+    transform:rotate(360deg) scale(1.08);
 }
 
 .logo-text{
@@ -140,11 +172,12 @@ button{
     font-size:13px;
     letter-spacing:.5px;
     opacity:.88;
-    transition:.3s;
+    transition:.6s ease;
 }
 
 .nav-links a:hover{
     color:var(--gold2);
+    transform:translateY(-3px);
 }
 
 .nav-btn{
@@ -152,6 +185,13 @@ button{
     border:1px solid var(--gold);
     color:var(--gold2)!important;
     border-radius:30px;
+    transition:.7s ease!important;
+}
+
+.nav-btn:hover{
+    background:var(--gold);
+    color:var(--dark)!important;
+    transform:translateY(-4px)!important;
 }
 
 .menu{
@@ -160,6 +200,11 @@ button{
     font-size:28px;
     cursor:pointer;
 }
+
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero{
     min-height:100vh;
@@ -188,7 +233,7 @@ button{
     font-size:12px;
     font-weight:700;
     margin-bottom:22px;
-    animation:fadeUp 1s ease both;
+    animation:fadeUp 1.2s .2s ease both;
 }
 
 .hero h1{
@@ -197,7 +242,7 @@ button{
     font-size:clamp(55px,8vw,115px);
     line-height:.9;
     max-width:850px;
-    animation:fadeUp 1s .15s ease both;
+    animation:fadeUp 1.3s .35s ease both;
 }
 
 .hero h1 span{
@@ -211,14 +256,14 @@ button{
     font-size:17px;
     line-height:1.8;
     margin:32px 0;
-    animation:fadeUp 1s .3s ease both;
+    animation:fadeUp 1.3s .55s ease both;
 }
 
 .hero-buttons{
     display:flex;
     gap:15px;
     flex-wrap:wrap;
-    animation:fadeUp 1s .45s ease both;
+    animation:fadeUp 1.3s .75s ease both;
 }
 
 .btn{
@@ -227,7 +272,7 @@ button{
     font-size:13px;
     font-weight:700;
     letter-spacing:.5px;
-    transition:.35s;
+    transition:.7s cubic-bezier(.2,.8,.2,1);
     display:inline-flex;
     align-items:center;
     justify-content:center;
@@ -239,8 +284,8 @@ button{
 }
 
 .btn-gold:hover{
-    transform:translateY(-4px);
-    box-shadow:0 15px 35px rgba(198,155,74,.25);
+    transform:translateY(-6px) scale(1.03);
+    box-shadow:0 18px 40px rgba(198,155,74,.35);
 }
 
 .btn-outline{
@@ -252,6 +297,7 @@ button{
 .btn-outline:hover{
     background:white;
     color:var(--green);
+    transform:translateY(-6px) scale(1.03);
 }
 
 .hero-scroll{
@@ -344,6 +390,11 @@ button{
     margin-top:22px;
 }
 
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
 .about{
     background:var(--cream);
 }
@@ -364,11 +415,11 @@ button{
 .about-image img{
     height:620px;
     object-fit:cover;
-    transition:transform 1s;
+    transition:1.2s ease;
 }
 
 .about-image:hover img{
-    transform:scale(1.04);
+    transform:scale(1.06);
 }
 
 .about-badge{
@@ -379,6 +430,11 @@ button{
     color:white;
     padding:28px 35px;
     text-align:center;
+    transition:.7s ease;
+}
+
+.about-image:hover .about-badge{
+    padding-bottom:35px;
 }
 
 .about-badge strong{
@@ -409,6 +465,11 @@ button{
 .stat{
     border-top:1px solid #d8ccb3;
     padding-top:18px;
+    transition:.6s ease;
+}
+
+.stat:hover{
+    transform:translateY(-6px);
 }
 
 .stat strong{
@@ -423,6 +484,11 @@ button{
     font-size:11px;
     letter-spacing:1px;
 }
+
+
+/* =========================================================
+   RICE
+========================================================= */
 
 .rice-section{
     background:var(--green);
@@ -455,11 +521,11 @@ button{
 .rice-card img{
     height:100%;
     object-fit:cover;
-    transition:1s;
+    transition:1.3s cubic-bezier(.2,.8,.2,1);
 }
 
 .rice-card:hover img{
-    transform:scale(1.1);
+    transform:scale(1.12);
 }
 
 .rice-overlay{
@@ -470,6 +536,11 @@ button{
     flex-direction:column;
     justify-content:flex-end;
     padding:30px;
+    transition:.7s ease;
+}
+
+.rice-card:hover .rice-overlay{
+    background:linear-gradient(transparent 25%,rgba(5,25,18,.98));
 }
 
 .rice-number{
@@ -482,6 +553,11 @@ button{
 .rice-card h3{
     font-family:'Playfair Display',serif;
     font-size:29px;
+    transition:.7s ease;
+}
+
+.rice-card:hover h3{
+    transform:translateY(-5px);
 }
 
 .rice-card p{
@@ -489,6 +565,11 @@ button{
     font-size:12px;
     margin-top:8px;
 }
+
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
 
 .products{
     background:#eee8d9;
@@ -507,7 +588,7 @@ button{
     min-height:210px;
     position:relative;
     overflow:hidden;
-    transition:.4s;
+    transition:.8s cubic-bezier(.2,.8,.2,1);
 }
 
 .product-card:before{
@@ -519,21 +600,26 @@ button{
     background:rgba(198,155,74,.1);
     right:-30px;
     top:-30px;
-    transition:.4s;
+    transition:.8s ease;
 }
 
 .product-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 25px 50px rgba(30,50,40,.1);
+    transform:translateY(-12px);
+    box-shadow:0 30px 60px rgba(30,50,40,.15);
 }
 
 .product-card:hover:before{
-    transform:scale(2);
+    transform:scale(2.4);
 }
 
 .product-icon{
     font-size:35px;
     margin-bottom:20px;
+    transition:.7s ease;
+}
+
+.product-card:hover .product-icon{
+    transform:scale(1.15) rotate(-5deg);
 }
 
 .product-card h3{
@@ -550,6 +636,11 @@ button{
     margin-top:8px;
     position:relative;
 }
+
+
+/* =========================================================
+   WHOLESALE
+========================================================= */
 
 .wholesale{
     min-height:600px;
@@ -588,7 +679,20 @@ button{
     border-radius:30px;
     color:rgba(255,255,255,.75);
     font-size:11px;
+    transition:.6s ease;
 }
+
+.wholesale-list span:hover{
+    background:var(--gold);
+    border-color:var(--gold);
+    color:var(--dark);
+    transform:translateY(-4px);
+}
+
+
+/* =========================================================
+   PROPRIETOR
+========================================================= */
 
 .proprietor{
     background:var(--cream);
@@ -603,11 +707,17 @@ button{
 
 .proprietor-photo{
     position:relative;
+    overflow:hidden;
 }
 
 .proprietor-photo img{
     height:570px;
     object-fit:cover;
+    transition:1.2s ease;
+}
+
+.proprietor-photo:hover img{
+    transform:scale(1.05);
 }
 
 .proprietor-frame{
@@ -615,6 +725,11 @@ button{
     inset:18px;
     border:1px solid rgba(255,255,255,.6);
     pointer-events:none;
+    transition:.8s ease;
+}
+
+.proprietor-photo:hover .proprietor-frame{
+    inset:12px;
 }
 
 .proprietor-copy blockquote{
@@ -647,6 +762,11 @@ button{
     color:var(--gold);
 }
 
+
+/* =========================================================
+   WHY US
+========================================================= */
+
 .why{
     background:white;
 }
@@ -662,12 +782,13 @@ button{
 .why-card{
     background:white;
     padding:50px 35px;
-    transition:.4s;
+    transition:.8s ease;
 }
 
 .why-card:hover{
     background:var(--green);
     color:white;
+    transform:translateY(-8px);
 }
 
 .why-card span{
@@ -708,6 +829,12 @@ button{
     background:white;
     padding:50px 35px;
     box-shadow:0 20px 50px rgba(30,50,40,.08);
+    transition:.8s ease;
+}
+
+.review-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 30px 70px rgba(30,50,40,.14);
 }
 
 .stars{
@@ -737,8 +864,8 @@ button{
 }
 
 .justdial-btn:hover{
-    transform:translateY(-4px);
-    box-shadow:0 12px 30px rgba(18,60,45,.2);
+    transform:translateY(-6px);
+    box-shadow:0 15px 35px rgba(18,60,45,.25);
 }
 
 
@@ -760,14 +887,74 @@ button{
 .map-box{
     min-height:500px;
     overflow:hidden;
-    background:#eee;
+    background:
+    linear-gradient(135deg,rgba(18,60,45,.97),rgba(9,39,29,.97));
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-.map-box iframe{
+.map-box-inner{
     width:100%;
-    height:500px;
-    border:0;
-    display:block;
+    height:100%;
+    min-height:500px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px;
+    color:white;
+}
+
+.map-pin{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    border:1px solid rgba(226,194,125,.6);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:38px;
+    margin-bottom:25px;
+    animation:mapPulse 2.5s ease-in-out infinite;
+}
+
+.map-box-inner h3{
+    font-family:'Playfair Display',serif;
+    font-size:38px;
+    color:white;
+    margin-bottom:12px;
+}
+
+.map-box-inner p{
+    color:rgba(255,255,255,.65);
+    max-width:450px;
+    line-height:1.7;
+    font-size:14px;
+}
+
+.map-open-btn{
+    margin-top:28px;
+    background:var(--gold);
+    color:var(--dark);
+}
+
+.map-open-btn:hover{
+    transform:translateY(-6px) scale(1.03);
+    box-shadow:0 18px 40px rgba(198,155,74,.3);
+}
+
+@keyframes mapPulse{
+    0%,100%{
+        transform:scale(1);
+        box-shadow:0 0 0 0 rgba(198,155,74,.25);
+    }
+    50%{
+        transform:scale(1.08);
+        box-shadow:0 0 0 18px rgba(198,155,74,0);
+    }
 }
 
 .hours-box{
@@ -794,6 +981,12 @@ button{
     padding:17px 0;
     border-bottom:1px solid rgba(255,255,255,.12);
     font-size:13px;
+    transition:.5s ease;
+}
+
+.hours-list li:hover{
+    padding-left:7px;
+    padding-right:7px;
 }
 
 .hours-list li span:last-child{
@@ -865,7 +1058,7 @@ button{
 }
 
 .contact-buttons .btn:hover{
-    transform:translateY(-4px);
+    transform:translateY(-6px) scale(1.03);
 }
 
 
@@ -891,6 +1084,11 @@ footer{
     font-family:'Playfair Display',serif;
     font-size:35px;
     color:var(--gold2);
+    transition:.6s ease;
+}
+
+.footer-logo:hover{
+    letter-spacing:2px;
 }
 
 .footer-about{
@@ -918,6 +1116,15 @@ footer li{
     font-size:12px;
 }
 
+footer li a{
+    transition:.5s ease;
+}
+
+footer li a:hover{
+    color:var(--gold2);
+    padding-left:5px;
+}
+
 .footer-bottom{
     max-width:1400px;
     margin:50px auto 0;
@@ -930,10 +1137,15 @@ footer li{
     font-size:10px;
 }
 
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
 .reveal{
     opacity:0;
     transform:translateY(50px);
-    transition:1s ease;
+    transition:1.2s cubic-bezier(.2,.8,.2,1);
 }
 
 .reveal.active{
@@ -941,10 +1153,15 @@ footer li{
     transform:translateY(0);
 }
 
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
 @keyframes fadeUp{
     from{
         opacity:0;
-        transform:translateY(35px);
+        transform:translateY(45px);
     }
     to{
         opacity:1;
@@ -1024,10 +1241,13 @@ footer li{
         grid-template-columns:1fr;
     }
 
-    .map-box,
-    .map-box iframe{
+    .map-box{
         min-height:400px;
         height:400px;
+    }
+
+    .map-box-inner{
+        min-height:400px;
     }
 
     .footer-grid{
@@ -1095,6 +1315,21 @@ footer li{
         width:100%;
         max-width:300px;
     }
+
+    .map-box{
+        height:420px;
+        min-height:420px;
+    }
+
+    .map-box-inner{
+        min-height:420px;
+        padding:25px;
+    }
+
+    .map-box-inner h3{
+        font-size:32px;
+    }
+
 }
 
 </style>
@@ -1657,16 +1892,37 @@ Find us at our exact location or contact us before visiting.
 
 <div class="location-grid">
 
+
+<!-- EXACT GOOGLE MAPS LOCATION -->
+
 <div class="map-box reveal">
 
-<iframe
-src="https://www.google.com/maps?q=https://maps.app.goo.gl/M5Z5GZ4kRFwdCw4A8&output=embed"
-loading="lazy"
-allowfullscreen>
-</iframe>
+<div class="map-box-inner">
+
+<div class="map-pin">
+📍
+</div>
+
+<h3>AMAN TRADING</h3>
+
+<p>
+Visit our exact location in Kolkata. Tap below to open the location directly in Google Maps.
+</p>
+
+<a
+href="https://maps.app.goo.gl/kd51A31RAtrPs2Xr5"
+target="_blank"
+rel="noopener"
+class="btn map-open-btn">
+OPEN EXACT LOCATION ↗
+</a>
 
 </div>
 
+</div>
+
+
+<!-- OPENING HOURS -->
 
 <div class="hours-box reveal">
 
@@ -1713,7 +1969,7 @@ allowfullscreen>
 
 
 <a
-href="https://maps.app.goo.gl/M5Z5GZ4kRFwdCw4A8"
+href="https://maps.app.goo.gl/kd51A31RAtrPs2Xr5"
 target="_blank"
 rel="noopener"
 class="btn btn-gold location-btn">
@@ -1768,7 +2024,7 @@ class="btn contact-whatsapp">
 
 
 <a
-href="https://maps.app.goo.gl/M5Z5GZ4kRFwdCw4A8"
+href="https://maps.app.goo.gl/kd51A31RAtrPs2Xr5"
 target="_blank"
 rel="noopener"
 class="btn contact-location">
@@ -1859,7 +2115,7 @@ WhatsApp
 </li>
 
 <li>
-<a href="https://maps.app.goo.gl/M5Z5GZ4kRFwdCw4A8" target="_blank" rel="noopener">
+<a href="https://maps.app.goo.gl/kd51A31RAtrPs2Xr5" target="_blank" rel="noopener">
 Location
 </a>
 </li>
@@ -1988,8 +2244,20 @@ hero.style.backgroundPositionY = (window.scrollY * .25) + "px";
 
 });
 
+
+/* =========================================================
+   OPENING ANIMATION
+   Makes the hero entrance play cleanly every time
+   the page is loaded/refreshed.
+========================================================= */
+
+window.addEventListener("load",()=>{
+
+document.body.classList.add("loaded");
+
+});
+
 </script>
 
 </body>
 </html>
-```
